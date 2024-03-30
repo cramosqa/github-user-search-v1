@@ -29,9 +29,9 @@ The github api is public and it has a limit of 60 request for a unauthenticated 
 
 # Test Plan
 
-## Project Name: [Project Name]
+## Project Name: [GitHub User Search]
 
-## Version: [Version Number]
+## Version: [v1]
 
 ## Table of Contents
 
@@ -50,7 +50,11 @@ The github api is public and it has a limit of 60 request for a unauthenticated 
 
 ## 1. Introduction
 
-Web page to allow user search for a GitHub user and retrieve user information.
+This project provides a Web page that allows user search for a GitHub user name and retrieves the following user information:
+- Foto
+- Name
+- Number of repositories
+- Repositories list: Path, description
 
 ## 2. Objectives
 
@@ -73,37 +77,37 @@ Describe the test environment, including hardware, software, and network configu
 
 Explain the overall testing approach, including techniques, methodologies, and tools to be used.
 
-Unit Tests:
+### Unit Tests:
 Test individual components, functions, or modules of the frontend codebase.
 Verify that each function behaves as expected in isolation.
 Mock dependencies such as API calls to simulate different scenarios.
-Integration Tests:
+### Integration Tests:
 Test the interaction between different components, including frontend UI, backend API, and external services like the GitHub API.
 Ensure that components work together as intended and handle data flow correctly.
-End-to-End (E2E) Tests:
+### End-to-End (E2E) Tests:
 Test the entire application flow from user input to displaying results on the page.
 Use automated testing tools to simulate real user interactions and verify expected behavior.
 Validate that the application behaves correctly across different browsers and devices.
-Functional Tests:
+### Functional Tests:
 Test the functional requirements of the application.
 Verify that the user can input a GitHub username, submit the form, and receive relevant information about the user from the GitHub database.
-User Interface (UI) Tests:
+### User Interface (UI) Tests:
 Test the appearance and usability of the web page.
 Ensure that UI elements are correctly displayed and responsive across various screen sizes and devices.
 Validate that the UI follows design guidelines and is intuitive for users to interact with.
-Performance Tests:
+### Performance Tests:
 Measure the performance of the web page under different conditions.
 Test the response time of search requests to the GitHub API.
 Verify that the page loads quickly and remains responsive, even under heavy load.
-Security Tests:
+### Security Tests:
 Test for vulnerabilities such as injection attacks, cross-site scripting (XSS), and cross-site request forgery (CSRF).
 Ensure that sensitive data, such as access tokens, is handled securely.
 Validate that input validation and sanitization are effective in preventing malicious input.
-Accessibility Tests:
+### Accessibility Tests:
 Ensure that the web page is accessible to users with disabilities.
 Test for compliance with accessibility standards such as WCAG (Web Content Accessibility Guidelines).
 Verify that assistive technologies can interpret and interact with the page's content effectively.
-Regression Tests:
+### Regression Tests:
 Re-run previously executed tests to ensure that recent code changes have not introduced new bugs or regressions.
 Maintain a suite of regression tests to cover critical functionalities and edge cases.
 Cross-Browser and Cross-Device Tests:
@@ -112,21 +116,21 @@ Validate that the page renders correctly and functions as expected on various de
 
 ## 7. Test Cases
 
-A. User Interface
+### A. User Interface
 UI Layout Test: Verify that the UI elements (input field, search button) are displayed correctly.
 Responsiveness Test: Ensure the UI adapts to different screen sizes (desktop, tablet, mobile).
 Input Validation Test: Check if the input field accepts valid GitHub usernames only.
 Error Handling Test: Verify appropriate error messages are displayed for invalid inputs or server errors.
-B. Functionality
+### B. Functionality
 User Search Test: Enter a valid GitHub username and verify that the corresponding user data is retrieved and displayed correctly.
 Empty Search Test: Leave the input field empty and ensure an appropriate message is displayed.
 Non-existent User Test: Enter a GitHub username that does not exist and verify that a relevant message is displayed.
 Search Button Functionality Test: Verify that pressing the search button triggers the search action.
 Loading Indicator Test: Verify that a loading indicator is displayed while user data is being fetched from the server.
-C. Performance
+### C. Performance
 Response Time Test: Measure the time taken to retrieve user data for different scenarios (e.g., existing user, non-existent user).
 Load Testing: Simulate heavy traffic by sending multiple concurrent search requests and ensure the system handles them without crashing or slowing down significantly.
-D. Security
+### D. Security
 Input Sanitization Test: Verify that the input is properly sanitized to prevent injection attacks.
 Data Privacy Test: Ensure that sensitive user data is not exposed in the search results.
 
@@ -156,3 +160,6 @@ Obtain sign-off from relevant stakeholders once all issues are resolved and the 
 ## Appendix: References
 
 [List any references or documents relevant to the testing effort.]
+
+https://docs.github.com/en/enterprise-cloud@latest/admin/identity-and-access-management/iam-configuration-reference/username-considerations-for-external-authentication
+
