@@ -34,7 +34,7 @@ Ensure the GitHub User Search Web Page functions correctly by accurately retriev
 
 ## 3. Scope
 
-This test plan covers the functionality and usability of the GitHub User Search Web Page.
+This test plan covers the functionality and usability of the GitHub User Search.
 
 ## 4. Roles and Responsibilities
 
@@ -47,8 +47,7 @@ Developers: Responsible for fixing reported issues and enhancing the functionali
 
 #### Operating System:
 
-Development Machine: Windows, macOS, or Linux (whichever is preferred by the development team).
-Test Execution Nodes: Similar to the development machine or a mix of different operating systems for cross-browser testing.
+Windows.
 
 #### Development Tools:
 
@@ -57,65 +56,45 @@ IDE: Any preferred text editor or IDE such as Visual Studio Code, Sublime Text, 
 Git: Version control system for managing source code.
 Package Manager: npm or Yarn for managing dependencies.
 
+#### Testing Tools
+
+Robot Framework 
+Selenium 
+Mobile simulator - responsive testing tool Chrome Extension
+
 #### Browser Drivers:
 
-WebDriver executables for the browsers you intend to test. For Selenium with Robot Framework, you'll need WebDriver executables for Chrome, Firefox, etc.
-Ensure WebDriver executables are added to the system PATH.
+For Selenium with Robot Framework, was used Selenium WebDriver executable for Chrome.
+WebDriver executables must be added to the system PATH.
 
 #### Dependencies:
 
 Libraries: Install Robot Framework and SeleniumLibrary using pip.
 Project Dependencies: Install dependencies required for your Node.js and React project using npm or Yarn.
 Network Configuration:
-Internet Access:
+
+#### Internet Access:
 
 Ensure that the test environment has internet access to download dependencies, access external resources (if required for testing), and communicate with remote WebDriver servers.
-Firewall and Proxy Settings:
+
+#### Firewall and Proxy Settings:
 
 Configure firewall settings to allow communication with WebDriver servers and necessary external resources.
 Configure proxy settings if the test environment requires access to the internet through a proxy server.
-Network Isolation:
 
-Depending on security requirements, you may isolate the test environment from production and staging environments to prevent accidental data corruption or leakage.
-Additional Considerations:
-Environment Configuration Management:
+#### Network Isolation:
 
-Use configuration management tools like Ansible, Puppet, or Docker for consistent environment setup across development, staging, and production.
-Continuous Integration/Continuous Deployment (CI/CD):
+Depending on security requirements, isolate the test environment from production and staging environments to prevent accidental data corruption or leakage.
 
-Integrate test automation into CI/CD pipelines using tools like Jenkins, Travis CI, or GitLab CI/CD for automated testing on every code commit or deployment.
-Logging and Monitoring:
-
-Implement logging mechanisms to capture test execution logs for debugging.
-Set up monitoring tools to track test execution status, performance metrics, and resource utilization.
-
-Mobile simulator - responsive testing tool Chrome Extension
 
 ## 6. Test Strategy
-
-Explain the overall testing approach, including techniques, methodologies, and tools to be used.
-
-### Unit Tests:
-
-Test individual components, functions, or modules of the frontend codebase.
-Verify that each function behaves as expected in isolation.
-Mock dependencies such as API calls to simulate different scenarios.
-
-### Integration Tests:
-
-Test the interaction between different components, including frontend UI, backend API, and external services like the GitHub API.
-Ensure that components work together as intended and handle data flow correctly.
-
-### End-to-End (E2E) Tests:
-
-Test the entire application flow from user input to displaying results on the page.
-Use automated testing tools to simulate real user interactions and verify expected behavior.
-Validate that the application behaves correctly across different browsers and devices.
 
 ### Functional Tests:
 
 Test the functional requirements of the application.
 Verify that the user can input a GitHub username, submit the form, and receive relevant information about the user from the GitHub database.
+
+Manual testing using Mobile simulator.
 
 ### User Interface (UI) Tests:
 
@@ -123,11 +102,38 @@ Test the appearance and usability of the web page.
 Ensure that UI elements are correctly displayed and responsive across various screen sizes and devices.
 Validate that the UI follows design guidelines and is intuitive for users to interact with.
 
+tests\user-search-v1-tests.robot
+
+### End-to-End (E2E) Tests:
+
+Test the entire application flow from user input to displaying results on the page.
+Use automated testing tools to simulate real user interactions and verify expected behavior.
+Validate that the application behaves correctly across different browsers and devices.
+
+tests\user-search-v1-tests.robot
+
+### Integration Tests:
+
+Test the interaction between different components, including frontend UI, backend API, and external services like the GitHub API.
+Ensure that components work together as intended and handle data flow correctly.
+
+tests\user-search-v1-tests.robot
+
+### Unit Tests:
+
+Test individual components, functions, or modules of the frontend codebase.
+Verify that each function behaves as expected in isolation.
+Mock dependencies such as API calls to simulate different scenarios.
+
+WIP
+
 ### Performance Tests:
 
 Measure the performance of the web page under different conditions.
 Test the response time of search requests to the GitHub API.
 Verify that the page loads quickly and remains responsive, even under heavy load.
+
+TBD
 
 ### Security Tests:
 
@@ -135,11 +141,15 @@ Test for vulnerabilities such as injection attacks, cross-site scripting (XSS), 
 Ensure that sensitive data, such as access tokens, is handled securely.
 Validate that input validation and sanitization are effective in preventing malicious input.
 
+tests\user-search-v1-tests.robot
+
 ### Accessibility Tests:
 
 Ensure that the web page is accessible to users with disabilities.
 Test for compliance with accessibility standards such as WCAG (Web Content Accessibility Guidelines).
 Verify that assistive technologies can interpret and interact with the page's content effectively.
+
+TBD
 
 ### Regression Tests:
 
@@ -149,44 +159,40 @@ Cross-Browser and Cross-Device Tests:
 Test the web page's compatibility across different web browsers (e.g., Chrome, Firefox, Safari, Edge).
 Validate that the page renders correctly and functions as expected on various devices (e.g., desktop, tablet, mobile).
 
+tests\user-search-v1-tests.robot
+Mobile simulator
+
 ## 7. Test Cases
 
 ### A. User Interface
 
 UI Layout Test: Verify that the UI elements (input field, search button) are displayed correctly.
-Responsiveness Test: Ensure the UI adapts to different screen sizes (desktop, tablet, mobile). ()
+Responsiveness Test: Ensure the UI adapts to different screen sizes (desktop, tablet, mobile). 
 Input Validation Test: Check if the input field accepts valid GitHub usernames only.
-GitHub usernames:
 
-Allowed Characters:
+**GitHub usernames:**
 
+*Allowed Characters:*
 GitHub usernames can contain alphanumeric characters (letters and numbers), hyphens ("-"), and underscores ("\_").
 They cannot contain spaces or any other special characters.
-Length:
-
+*Length:*
 Usernames must be at least one character long.
 They can be up to 39 characters long.
-Case Sensitivity:
-
+*Case Sensitivity:*
 Usernames are case-insensitive. However, GitHub will display the username exactly as it was entered during registration.
-Reserved Names:
-
+*Reserved Names:*
 Usernames cannot be in use by another GitHub user.
 They cannot be reserved words, such as "admin" or "root".
-Initial Character:
-
+*Initial Character:*
 Usernames must start with an alphanumeric character.
 They cannot start with a hyphen or underscore.
-Consecutive Dashes:
-
+*Consecutive Dashes:*
 Usernames cannot contain consecutive hyphens.
 For example, "user--name" is not allowed.
-Underscores and Dashes:
-
+*Underscores and Dashes:*
 Usernames can contain both underscores and hyphens, but they cannot start or end with these characters.
 For example, "-username" or "username-" are not allowed.
-Restrictions:
-
+*Restrictions:*
 GitHub may restrict certain usernames that violate its terms of service, such as impersonation, trademark violations, or offensive content.
 Error Handling Test: Verify appropriate error messages are displayed for invalid inputs or server errors.
 
@@ -210,18 +216,13 @@ Data Privacy Test: Ensure that sensitive user data is not exposed in the search 
 
 ## 8. Test Execution
 
-Detail the process for executing tests, including any prerequisites or setup instructions.
 Perform manual testing based on the test cases outlined above.
-Use automated testing tools where applicable to improve efficiency.
+Execute tests\user-search-v1-tests.robot
 Record any issues encountered during testing along with steps to reproduce them.
 
 ## 9. Test Reporting
 
-Describe how test results will be documented, including formats and tools used for reporting.
-
-Document the test results including pass/fail status for each test case.
-Provide detailed information about any defects found, including screenshots or logs if necessary.
-Communicate the test results to the development team for further action.
+Robot Framework returns three result files: output, log and report.
 
 ## 10. Test Closure
 
@@ -229,10 +230,3 @@ Outline the process for closing out the testing effort, including reviewing test
 Review the test results with the development team and address any unresolved issues.
 Obtain sign-off from relevant stakeholders once all issues are resolved and the system is deemed ready for deployment.
 
----
-
-## Appendix: References
-
-[List any references or documents relevant to the testing effort.]
-
-https://docs.github.com/en/enterprise-cloud@latest/admin/identity-and-access-management/iam-configuration-reference/username-considerations-for-external-authentication
