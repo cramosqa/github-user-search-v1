@@ -62,6 +62,7 @@ export const User = () => {
               <Button
                 customStyle={styles.button}
                 title="Return"
+                id="returnBtn"
                 onClick={navigateToHome}
               />
             </div>

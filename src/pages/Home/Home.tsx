@@ -24,6 +24,7 @@ export const Home = () => {
           customStyle={styles.input}
           type="text"
           name="username"
+          id="inputUser"
           placeholder="Type a github username"
           value={username}
           autoCapitalize="none"
@@ -32,6 +33,7 @@ export const Home = () => {
         <Button
           customStyle={styles.button}
           title="search"
+          id="searchBtn"
           isDisabled={username.length <= 3}
           onClick={navigateToUserPage}
         />
