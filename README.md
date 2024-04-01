@@ -145,8 +145,7 @@ tests\user-search-v1-tests.robot
 Test the interaction between different components, including frontend UI, backend API, and external services like the GitHub API.
 Ensure that components work together as intended and handle data flow correctly.
 
-npm install puppeteer jest @types/jest ts-jest ts-node --save-dev
-tests\user-search-v1-tests.robot
+tests\user-search-v1-inttests.robot
 
 ### Unit Tests:
 
@@ -154,7 +153,7 @@ Test individual components, functions, or modules of the frontend codebase.
 Verify that each function behaves as expected in isolation.
 Mock dependencies such as API calls to simulate different scenarios.
 
-WIP
+TBD
 
 ### Performance Tests:
 
