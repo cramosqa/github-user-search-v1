@@ -35,16 +35,16 @@ The github api is public and it has a limit of 60 request for a unauthenticated 
 
 ## Table of Contents
 
-1. [Introduction](#1. Introduction)
-2. [Objectives](#objectives)
-3. [Scope](#scope)
-4. [Roles and Responsibilities](#roles-and-responsibilities)
-5. [Test Environment](#test-environment)
-6. [Test Strategy](#test-strategy)
-7. [Test Cases](#test-cases)
-8. [Test Execution](#test-execution)
-9. [Test Reporting](#test-reporting)
-10. [Test Closure](#test-closure)
+1. Introduction
+2. Objectives
+3. Scope
+4. Roles and Responsibilities
+5. Test Environment
+6. Test Strategy
+7. Test Cases
+8. Test Execution
+9. Test Reporting
+10. Test Closure
 
 ---
 
@@ -91,21 +91,22 @@ Package Manager: npm or Yarn for managing dependencies.
 
 #### Testing Tools
 
-1. Robot Framework 
-   To install Robot Framework  type `pip install robotframework` in your command-line interface
+1. Robot Framework
+   To install Robot Framework type `pip install robotframework` in your command-line interface
 
 2. Selenium library (allows Robot Framework to interact with web browsers)
-   To install Selenium library  type `pip install robotframework-seleniumlibrary` in your command-line interface 
+   To install Selenium library type `pip install robotframework-seleniumlibrary` in your command-line interface
 
 3. Requests library (simplifies making HTTP requests and handling responses)
-   To install Requests library type `pip install requests` in your command-line interface 
+   To install Requests library type `pip install requests` in your command-line interface
 
-4. Browser Drivers  (allows Selenium to interact with web browsers)
+4. Browser Drivers (allows Selenium to interact with web browsers)
    Download drivers for the browsers you want to test with
-    - ChromeDriver: For Google Chrome
-    - GeckoDriver: For Mozilla Firefox
-    - WebDriver for Safari: For Safari
-    - EdgeDriver: For Microsoft Edge
+
+   - ChromeDriver: For Google Chrome
+   - GeckoDriver: For Mozilla Firefox
+   - WebDriver for Safari: For Safari
+   - EdgeDriver: For Microsoft Edge
 
 5. Mobile simulator - responsive testing tool Chrome Extension
 
@@ -130,7 +131,6 @@ Strategy - Manual testing using Browser.
 
 - Test the functional requirements of the application.
 - Verify that the user can input a GitHub username, submit the form, and receive relevant information about the user from the GitHub database.
-
 
 ### User Interface (UI) Tests:
 
@@ -200,7 +200,6 @@ Strategy - Manual testing use Mobile Simulator extensions
 
 Test the web page's compatibility across different web browsers (e.g., Chrome, Firefox, Safari, Edge).
 Validate that the page renders correctly and functions as expected on various devices (e.g., desktop, tablet, mobile).
-
 
 ## 7. Test Cases
 
@@ -273,17 +272,16 @@ Data Privacy Test: Ensure that sensitive user data is not exposed in the search 
 1. Manual testing based on the test cases outlined above.
 
 2. Run automated tests:
-    - Open a command prompt or terminal and navigate to the directory where automated tests file is located (project name\tests)
-    - Execute the following command: `robot file_name`
-        - replace file_name by user-search-v1-tests.robot  for E2E tests;
-        - replace file_name by user-search-v1-inttests.robot for integration tests
+   - Open a command prompt or terminal and navigate to the directory where automated tests file is located (project name\tests)
+   - Execute the following command: `robot file_name`
+     - replace file_name by user-search-v1-tests.robot for E2E tests;
+     - replace file_name by user-search-v1-inttests.robot for integration tests
 
 ## 9. Test Reporting
 
-After the tests have completed, Robot Framework will generate output files (e.g., log.html, report.html) in the same directory as the test suite. 
+After the tests have completed, Robot Framework will generate output files (e.g., log.html, report.html) in the same directory as the test suite.
 Open these files in a web browser to view detailed logs and reports of test execution.
 It's possible to export failed tests to create Trello or Jira cards (not done).
-
 
 ## 10. Test Closure
 
