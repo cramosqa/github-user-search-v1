@@ -35,7 +35,7 @@ The github api is public and it has a limit of 60 request for a unauthenticated 
 
 ## Table of Contents
 
-1. [Introduction](#introduction)
+1. [Introduction](#1. Introduction)
 2. [Objectives](#objectives)
 3. [Scope](#scope)
 4. [Roles and Responsibilities](#roles-and-responsibilities)
@@ -76,7 +76,11 @@ Developers: Responsible for fixing reported issues and enhancing the functionali
 
 #### Operating System:
 
-Windows.
+- Windows: Windows 7, Windows 8, Windows 10, and Windows Server editions.
+
+- macOS: macOS Mojave, macOS Catalina, and macOS Big Sur.
+
+- Linux: distributions like Ubuntu, CentOS, Fedora, and others.
 
 #### Development Tools:
 
@@ -87,20 +91,23 @@ Package Manager: npm or Yarn for managing dependencies.
 
 #### Testing Tools
 
-Robot Framework
-Selenium
-Mobile simulator - responsive testing tool Chrome Extension
+1. Robot Framework 
+   To install Robot Framework  type `pip install robotframework` in your command-line interface
 
-#### Browser Drivers:
+2. Selenium library (allows Robot Framework to interact with web browsers)
+   To install Selenium library  type `pip install robotframework-seleniumlibrary` in your command-line interface 
 
-For Selenium with Robot Framework, was used Selenium WebDriver executable for Chrome.
-WebDriver executables must be added to the system PATH.
+3. Requests library (simplifies making HTTP requests and handling responses)
+   To install Requests library type `pip install requests` in your command-line interface 
 
-#### Dependencies:
+4. Browser Drivers  (allows Selenium to interact with web browsers)
+   Download drivers for the browsers you want to test with
+    - ChromeDriver: For Google Chrome
+    - GeckoDriver: For Mozilla Firefox
+    - WebDriver for Safari: For Safari
+    - EdgeDriver: For Microsoft Edge
 
-Libraries: Install Robot Framework and SeleniumLibrary using pip.
-Project Dependencies: Install dependencies required for your Node.js and React project using npm or Yarn.
-Network Configuration:
+5. Mobile simulator - responsive testing tool Chrome Extension
 
 #### Internet Access:
 
@@ -119,76 +126,81 @@ Depending on security requirements, isolate the test environment from production
 
 ### Functional Tests:
 
-Test the functional requirements of the application.
-Verify that the user can input a GitHub username, submit the form, and receive relevant information about the user from the GitHub database.
+Strategy - Manual testing using Browser.
 
-Manual testing using Mobile simulator.
+- Test the functional requirements of the application.
+- Verify that the user can input a GitHub username, submit the form, and receive relevant information about the user from the GitHub database.
+
 
 ### User Interface (UI) Tests:
 
-Test the appearance and usability of the web page.
-Ensure that UI elements are correctly displayed and responsive across various screen sizes and devices.
-Validate that the UI follows design guidelines and is intuitive for users to interact with.
+Strategy - Automated tests
 
-tests\user-search-v1-tests.robot
+- Test the appearance and usability of the web page.
+- Ensure that UI elements are correctly displayed and responsive across various screen sizes and devices.
+- Validate that the UI follows design guidelines and is intuitive for users to interact with.
 
 ### End-to-End (E2E) Tests:
 
-Test the entire application flow from user input to displaying results on the page.
-Use automated testing tools to simulate real user interactions and verify expected behavior.
-Validate that the application behaves correctly across different browsers and devices.
+Strategy - Automated tests
 
-tests\user-search-v1-tests.robot
+- Test the entire application flow from user input to displaying results on the page.
+- Use automated testing tools to simulate real user interactions and verify expected behavior.
+- Validate that the application behaves correctly across different browsers and devices.
 
 ### Integration Tests:
 
-Test the interaction between different components, including frontend UI, backend API, and external services like the GitHub API.
-Ensure that components work together as intended and handle data flow correctly.
+Strategy - Automated tests
 
-tests\user-search-v1-inttests.robot
+- Test the interaction between different components, including frontend UI, backend API, and external services like the GitHub API.
+- Ensure that components work together as intended and handle data flow correctly.
 
 ### Unit Tests:
 
-Test individual components, functions, or modules of the frontend codebase.
-Verify that each function behaves as expected in isolation.
-Mock dependencies such as API calls to simulate different scenarios.
+Strategy - Automated tests
 
-TBD
+- Test individual components, functions, or modules of the frontend codebase.
+- Verify that each function behaves as expected in isolation.
+- Mock dependencies such as API calls to simulate different scenarios.
 
 ### Performance Tests:
 
-Measure the performance of the web page under different conditions.
-Test the response time of search requests to the GitHub API.
-Verify that the page loads quickly and remains responsive, even under heavy load.
+Strategy - Automated tests
 
-TBD
+- Measure the performance of the web page under different conditions.
+- Test the response time of search requests to the GitHub API.
+- Verify that the page loads quickly and remains responsive, even under heavy load.
 
 ### Security Tests:
 
-Test for vulnerabilities such as injection attacks, cross-site scripting (XSS), and cross-site request forgery (CSRF).
-Ensure that sensitive data, such as access tokens, is handled securely.
-Validate that input validation and sanitization are effective in preventing malicious input.
+Strategy - Automated tests
 
-tests\user-search-v1-tests.robot
+- Test for vulnerabilities such as injection attacks, cross-site scripting (XSS), and cross-site request forgery (CSRF).
+- Ensure that sensitive data, such as access tokens, is handled securely.
+- Validate that input validation and sanitization are effective in preventing malicious input.
 
 ### Accessibility Tests:
 
-Ensure that the web page is accessible to users with disabilities.
-Test for compliance with accessibility standards such as WCAG (Web Content Accessibility Guidelines).
-Verify that assistive technologies can interpret and interact with the page's content effectively.
+Strategy - Automated tests
 
-TBD
+- Ensure that the web page is accessible to users with disabilities.
+- Test for compliance with accessibility standards such as WCAG (Web Content Accessibility Guidelines).
+- Verify that assistive technologies can interpret and interact with the page's content effectively.
 
 ### Regression Tests:
 
-Re-run previously executed tests to ensure that recent code changes have not introduced new bugs or regressions.
-Maintain a suite of regression tests to cover critical functionalities and edge cases.
-Cross-Browser and Cross-Device Tests:
+Strategy - Automated tests
+
+- Re-run previously executed tests to ensure that recent code changes have not introduced new bugs or regressions.
+- Maintain a suite of regression tests to cover critical functionalities and edge cases.
+
+### Cross-Browser and Cross-Device Tests:
+
+Strategy - Manual testing use Mobile Simulator extensions
+
 Test the web page's compatibility across different web browsers (e.g., Chrome, Firefox, Safari, Edge).
 Validate that the page renders correctly and functions as expected on various devices (e.g., desktop, tablet, mobile).
 
-tests\user-search-v1-tests.robot
-Mobile simulator
 
 ## 7. Test Cases
 
@@ -258,15 +270,20 @@ Data Privacy Test: Ensure that sensitive user data is not exposed in the search 
 
 ## 8. Test Execution
 
-Perform manual testing based on the test cases outlined above.
+1. Manual testing based on the test cases outlined above.
 
-Execute tests\user-search-v1-tests.robot
-
-Record any issues encountered during testing along with steps to reproduce them.
+2. Run automated tests:
+    - Open a command prompt or terminal and navigate to the directory where automated tests file is located (project name\tests)
+    - Execute the following command: `robot file_name`
+        - replace file_name by user-search-v1-tests.robot  for E2E tests;
+        - replace file_name by user-search-v1-inttests.robot for integration tests
 
 ## 9. Test Reporting
 
-Robot Framework returns three result files: output, log and report.
+After the tests have completed, Robot Framework will generate output files (e.g., log.html, report.html) in the same directory as the test suite. 
+Open these files in a web browser to view detailed logs and reports of test execution.
+It's possible to export failed tests to create Trello or Jira cards (not done).
+
 
 ## 10. Test Closure
 

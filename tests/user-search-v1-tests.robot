@@ -1,5 +1,7 @@
 *** Settings ***
 Library    SeleniumLibrary
+Library    RequestsLibrary
+
 
 *** Variables ***
 ${APP URL}    http://localhost:3000/
@@ -221,6 +223,7 @@ User Search Security 1.3
       
     # Close
     [Teardown]    Close Browser
+
 
 *** Keywords ***
 Open Browser To Initial Page
