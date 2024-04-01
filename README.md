@@ -68,6 +68,7 @@ This test plan covers the functionality and usability of the GitHub User Search.
 ## 4. Roles and Responsibilities
 
 Testers: Responsible for executing the test cases and reporting any issues.
+
 Developers: Responsible for fixing reported issues and enhancing the functionality as required.
 
 ## 5. Test Environment
@@ -85,22 +86,29 @@ Developers: Responsible for fixing reported issues and enhancing the functionali
 #### Development Tools:
 
 Node.js: Required for running Node.js applications. Install the LTS version.
+
 IDE: Any preferred text editor or IDE such as Visual Studio Code, Sublime Text, or Atom.
+
 Git: Version control system for managing source code.
+
 Package Manager: npm or Yarn for managing dependencies.
 
 #### Testing Tools
 
 1. Robot Framework
+
    To install Robot Framework type `pip install robotframework` in your command-line interface
 
 2. Selenium library (allows Robot Framework to interact with web browsers)
+
    To install Selenium library type `pip install robotframework-seleniumlibrary` in your command-line interface
 
 3. Requests library (simplifies making HTTP requests and handling responses)
+
    To install Requests library type `pip install requests` in your command-line interface
 
 4. Browser Drivers (allows Selenium to interact with web browsers)
+
    Download drivers for the browsers you want to test with
 
    - ChromeDriver: For Google Chrome
@@ -117,6 +125,7 @@ Ensure that the test environment has internet access to download dependencies, a
 #### Firewall and Proxy Settings:
 
 Configure firewall settings to allow communication with WebDriver servers and necessary external resources.
+
 Configure proxy settings if the test environment requires access to the internet through a proxy server.
 
 #### Network Isolation:
@@ -199,6 +208,7 @@ Strategy - Automated tests
 Strategy - Manual testing use Mobile Simulator extensions
 
 Test the web page's compatibility across different web browsers (e.g., Chrome, Firefox, Safari, Edge).
+
 Validate that the page renders correctly and functions as expected on various devices (e.g., desktop, tablet, mobile).
 
 ## 7. Test Cases
@@ -206,7 +216,9 @@ Validate that the page renders correctly and functions as expected on various de
 ### A. User Interface
 
 UI Layout Test: Verify that the UI elements (input field, search button) are displayed correctly.
+
 Responsiveness Test: Ensure the UI adapts to different screen sizes (desktop, tablet, mobile).
+
 Input Validation Test: Check if the input field accepts valid GitHub usernames only.
 
 **GitHub usernames:**
@@ -280,7 +292,9 @@ Data Privacy Test: Ensure that sensitive user data is not exposed in the search 
 ## 9. Test Reporting
 
 After the tests have completed, Robot Framework will generate output files (e.g., log.html, report.html) in the same directory as the test suite.
-Open these files in a web browser to view detailed logs and reports of test execution.
+
+Open these files in a web browser to view detailed logs and reports of test execution.y
+
 It's possible to export failed tests to create Trello or Jira cards (not done).
 
 ## 10. Test Closure
