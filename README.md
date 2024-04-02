@@ -27,29 +27,28 @@ Clone or download the repo
 
 The github api is public and it has a limit of 60 request for a unauthenticated user
 
-# Test Plan
-
-## Project Name: GitHub User Search
-
-## Version: [v1]
-
-## Table of Contents
-
-1. [Introduction](#1-introduction)
-2. [Objectives](#2-objectives)
-3. [Scope](#3-scope)
-4. [Roles and Responsibilities](#4-roles-and-responsibilities)
-5. [Test Environment](#5-test-environment)
-6. [Test Strategy](#6-test-strategy)
-7. [Test Cases](#7-test-cases)
-8. [Test Execution](#8-test-execution)
-9. [Test Reporting](#9-test-reporting)
-10. [Test Closure](#10-test-closure)
-
 ---
+## Test Plan
 
-## 1. Introduction {#1-introduction}
+### Project Name: GitHub User Search
 
+### Version: [v1]
+
+### Table of Contents
+
+1. [Summary](#1)  
+2. [Objectives](#2)  
+3. [Scope](#3)  
+4. [Roles and Responsibilities](#4)  
+5. [Test Environment](#5)  
+6. [Test Strategy](#6)  
+7. [Test Cases](#7)  
+8. [Test Execution](#8)  
+9. [Test Reporting](#9)  
+10. [Test Closure](#10)  
+
+
+### 1. Summary 
 This project provides a Web page that allows user search for a GitHub user name and retrieves the following user information:
 
 - Photo
@@ -57,25 +56,24 @@ This project provides a Web page that allows user search for a GitHub user name 
 - Number of repositories
 - Repositories list: Path, description
 
-## 2. Objectives {#2-objectives}
-
+### 2. Objectives
 Ensure the GitHub User Search Web Page functions correctly by accurately retrieving user data from the GitHub database based on user input.
 
-## 3. Scope {#3-scope}
-
+### 3. Scope 
 This test plan covers the functionality and usability of the GitHub User Search.
 
-## 4. Roles and Responsibilities {#4-roles-and-responsibilities}
+### 4. Roles and Responsibilities
+Testers
+: Responsible for executing the test cases and reporting any issues.  
 
-Testers: Responsible for executing the test cases and reporting any issues.
+Developers
+: Responsible for fixing reported issues and enhancing the functionality as required.
 
-Developers: Responsible for fixing reported issues and enhancing the functionality as required.
+### 5. Test Environment 
 
-## 5. Test Environment {#5-test-environment}
+#### 5.1 Software Configuration:
 
-### Software Configuration:
-
-#### Operating System:
+##### 5.1.1 Operating System:
 
 - Windows: Windows 7, Windows 8, Windows 10, and Windows Server editions.
 
@@ -83,7 +81,7 @@ Developers: Responsible for fixing reported issues and enhancing the functionali
 
 - Linux: distributions like Ubuntu, CentOS, Fedora, and others.
 
-#### Development Tools:
+##### 5.1.2 Development Tools:
 
 Node.js: Required for running Node.js applications. Install the LTS version.
 
@@ -95,18 +93,17 @@ Package Manager: npm or Yarn for managing dependencies.
 
 #### Testing Tools
 
-1. [Robot Framework](https://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html)!
+1. [Robot Framework](https://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html)
 
    To install Robot Framework type `pip install robotframework` in your command-line interface
 
-
-2. [Selenium library](https://robotframework.org/SeleniumLibrary/)!
+2. [Selenium library](https://robotframework.org/SeleniumLibrary/)
 
    This library allows Robot Framework to interact with web browsers.
 
    To install Selenium library type `pip install robotframework-seleniumlibrary` in your command-line interface
 
-3. [Requests library](https://pypi.org/project/requests/)! 
+3. [Requests library](https://pypi.org/project/requests/)
 
    This library simplifies making HTTP requests and handling responses
 
@@ -137,7 +134,7 @@ Configure proxy settings if the test environment requires access to the internet
 
 Depending on security requirements, isolate the test environment from production and staging environments to prevent accidental data corruption or leakage.
 
-## 6. Test Strategy {#6-test-strategy}
+## 6. Test Strategy {#6}
 
 ### Functional Tests:
 
@@ -216,15 +213,18 @@ Test the web page's compatibility across different web browsers (e.g., Chrome, F
 
 Validate that the page renders correctly and functions as expected on various devices (e.g., desktop, tablet, mobile).
 
-## 7. Test Cases {#7-test-cases}
+## 7. Test Cases 
 
 ### A. User Interface
 
-UI Layout Test: Verify that the UI elements (input field, search button) are displayed correctly.
+UI Layout Test  
+: Verify that the UI elements (input field, search button) are displayed correctly.
 
-Responsiveness Test: Ensure the UI adapts to different screen sizes (desktop, tablet, mobile).
+Responsiveness Test  
+: Ensure the UI adapts to different screen sizes (desktop, tablet, mobile).  
 
-Input Validation Test: Check if the input field accepts valid GitHub usernames only.
+Input Validation Test  
+: Check if the input field accepts valid GitHub usernames only.
 
 **GitHub usernames:**
 
@@ -262,50 +262,61 @@ Error Handling Test: Verify appropriate error messages are displayed for invalid
 
 ### B. Functionality
 
-User Search Test: Enter a valid GitHub username and verify that the corresponding user data is retrieved and displayed correctly.
+User Search Test  
+: Enter a valid GitHub username and verify that the corresponding user data is retrieved and displayed correctly.
 
-Empty Search Test: Leave the input field empty and ensure an appropriate message is displayed.
+Empty Search Test  
+: Leave the input field empty and ensure an appropriate message is displayed.
 
-Non-existent User Test: Enter a GitHub username that does not exist and verify that a relevant message is displayed.
+Non-existent User Test  
+: Enter a GitHub username that does not exist and verify that a relevant message is displayed.
 
-Search Button Functionality Test: Verify that pressing the search button triggers the search action.
+Search Button Functionality Test  
+: Verify that pressing the search button triggers the search action.
 
-Loading Indicator Test: Verify that a loading indicator is displayed while user data is being fetched from the server.
+Loading Indicator Test  
+: Verify that a loading indicator is displayed while user data is being fetched from the server.
 
 ### C. Performance
 
-Response Time Test: Measure the time taken to retrieve user data for different scenarios (e.g., existing user, non-existent user).
+Response Time Test  
+: Measure the time taken to retrieve user data for different scenarios (e.g., existing user, non-existent user).
 
-Load Testing: Simulate heavy traffic by sending multiple concurrent search requests and ensure the system handles them without crashing or slowing down significantly.
+Load Testing  
+: Simulate heavy traffic by sending multiple concurrent search requests and ensure the system handles them without crashing or slowing down significantly.
 
 ### D. Security
 
-Input Sanitization Test: Verify that the input is properly sanitized to prevent injection attacks.
+Input Sanitization Test  
+: Verify that the input is properly sanitized to prevent injection attacks.
 
-Data Privacy Test: Ensure that sensitive user data is not exposed in the search results.
+Data Privacy Test  
+: Ensure that sensitive user data is not exposed in the search results.
 
-## 8. Test Execution {#8-test-execution}
+## 8. Test Execution 
 
 1. Manual testing based on the test cases outlined above.
 
 2. Run automated tests:
    - Open a command prompt or terminal and navigate to the directory where automated tests file is located (project name\tests)
    - Execute the following command: `robot file_name`
-     - replace file_name by user-search-v1-tests.robot for E2E tests;
-     - replace file_name by user-search-v1-inttests.robot for integration tests
+     - for E2E tests: replace file_name by **user-search-v1-tests.robot** ;
+     - for integration tests: replace file_name by **user-search-v1-inttests.robot** 
 
-## 9. Test Reporting {#9-test-execution}
+## 9. Test Reporting 
 
-After the tests have completed, Robot Framework will generate output files (e.g., log.html, report.html) in the same directory as the test suite.
-
-Open these files in a web browser to view detailed logs and reports of test execution.y
+After the tests have completed, Robot Framework will generate the following  output files  
+    - `projectname\results\report.html` - test suite results overview
+    - `projectname\results\log.html` - test suite detailed results
+    - `projectname\results\output.xml`
 
 It's possible to export failed tests to create Trello or Jira cards (not done).
 
-## 10. Test Closure {#10-test-closure}
+## 10. Test Closure {#10}
 
 Outline the process for closing out the testing effort, including reviewing test results, addressing defects, and obtaining sign-off.
 
 Review the test results with the development team and address any unresolved issues.
 
 Obtain sign-off from relevant stakeholders once all issues are resolved and the system is deemed ready for deployment.
+
