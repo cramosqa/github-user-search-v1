@@ -29,26 +29,26 @@ The github api is public and it has a limit of 60 request for a unauthenticated 
 
 # Test Plan
 
-## Project Name: [GitHub User Search]
+## Project Name: GitHub User Search
 
 ## Version: [v1]
 
 ## Table of Contents
 
-1. Introduction
-2. Objectives
-3. Scope
-4. Roles and Responsibilities
-5. Test Environment
-6. Test Strategy
-7. Test Cases
-8. Test Execution
-9. Test Reporting
-10. Test Closure
+1. [Introduction](#1-introduction)
+2. [Objectives](#2-objectives)
+3. [Scope](#3-scope)
+4. [Roles and Responsibilities](#4-roles-and-responsibilities)
+5. [Test Environment](#5-test-environment)
+6. [Test Strategy](#6-test-strategy)
+7. [Test Cases](#7-test-cases)
+8. [Test Execution](#8-test-execution)
+9. [Test Reporting](#9-test-reporting)
+10. [Test Closure](#10-test-closure)
 
 ---
 
-## 1. Introduction
+## 1. Introduction {#1-introduction}
 
 This project provides a Web page that allows user search for a GitHub user name and retrieves the following user information:
 
@@ -57,21 +57,21 @@ This project provides a Web page that allows user search for a GitHub user name 
 - Number of repositories
 - Repositories list: Path, description
 
-## 2. Objectives
+## 2. Objectives {#2-objectives}
 
 Ensure the GitHub User Search Web Page functions correctly by accurately retrieving user data from the GitHub database based on user input.
 
-## 3. Scope
+## 3. Scope {#3-scope}
 
 This test plan covers the functionality and usability of the GitHub User Search.
 
-## 4. Roles and Responsibilities
+## 4. Roles and Responsibilities {#4-roles-and-responsibilities}
 
 Testers: Responsible for executing the test cases and reporting any issues.
 
 Developers: Responsible for fixing reported issues and enhancing the functionality as required.
 
-## 5. Test Environment
+## 5. Test Environment {#5-test-environment}
 
 ### Software Configuration:
 
@@ -95,15 +95,20 @@ Package Manager: npm or Yarn for managing dependencies.
 
 #### Testing Tools
 
-1. Robot Framework
+1. [Robot Framework](https://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html)!
 
    To install Robot Framework type `pip install robotframework` in your command-line interface
 
-2. Selenium library (allows Robot Framework to interact with web browsers)
+
+2. [Selenium library](https://robotframework.org/SeleniumLibrary/)!
+
+   This library allows Robot Framework to interact with web browsers.
 
    To install Selenium library type `pip install robotframework-seleniumlibrary` in your command-line interface
 
-3. Requests library (simplifies making HTTP requests and handling responses)
+3. [Requests library](https://pypi.org/project/requests/)! 
+
+   This library simplifies making HTTP requests and handling responses
 
    To install Requests library type `pip install requests` in your command-line interface
 
@@ -132,7 +137,7 @@ Configure proxy settings if the test environment requires access to the internet
 
 Depending on security requirements, isolate the test environment from production and staging environments to prevent accidental data corruption or leakage.
 
-## 6. Test Strategy
+## 6. Test Strategy {#6-test-strategy}
 
 ### Functional Tests:
 
@@ -211,7 +216,7 @@ Test the web page's compatibility across different web browsers (e.g., Chrome, F
 
 Validate that the page renders correctly and functions as expected on various devices (e.g., desktop, tablet, mobile).
 
-## 7. Test Cases
+## 7. Test Cases {#7-test-cases}
 
 ### A. User Interface
 
@@ -279,7 +284,7 @@ Input Sanitization Test: Verify that the input is properly sanitized to prevent 
 
 Data Privacy Test: Ensure that sensitive user data is not exposed in the search results.
 
-## 8. Test Execution
+## 8. Test Execution {#8-test-execution}
 
 1. Manual testing based on the test cases outlined above.
 
@@ -289,7 +294,7 @@ Data Privacy Test: Ensure that sensitive user data is not exposed in the search 
      - replace file_name by user-search-v1-tests.robot for E2E tests;
      - replace file_name by user-search-v1-inttests.robot for integration tests
 
-## 9. Test Reporting
+## 9. Test Reporting {#9-test-execution}
 
 After the tests have completed, Robot Framework will generate output files (e.g., log.html, report.html) in the same directory as the test suite.
 
@@ -297,7 +302,7 @@ Open these files in a web browser to view detailed logs and reports of test exec
 
 It's possible to export failed tests to create Trello or Jira cards (not done).
 
-## 10. Test Closure
+## 10. Test Closure {#10-test-closure}
 
 Outline the process for closing out the testing effort, including reviewing test results, addressing defects, and obtaining sign-off.
 
